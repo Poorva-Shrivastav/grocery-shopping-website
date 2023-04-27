@@ -18,13 +18,13 @@ function Checkout({ cart, subtotal }) {
           <CheckoutCard />
           <div className="grid-container">
             <div className="grid-item">Subtotal</div>
-            <div className="grid-item">£{subtotal}</div>
+            <div className="grid-item">£{Number(subtotal).toFixed(2)}</div>
             <div className="grid-item"> </div>
             <div className="grid-item">Discount</div>
             <div className="grid-item">£0.00</div>
             <div className="grid-item"> </div>
             <div className="grid-item">Total</div>
-            <div className="grid-item">£{subtotal}</div>
+            <div className="grid-item">£{Number(subtotal).toFixed(2)}</div>
             <div className="grid-item">
               <button className="checkout-btn">Checkout</button>
             </div>

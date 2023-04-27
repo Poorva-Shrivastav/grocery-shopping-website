@@ -30,7 +30,7 @@ function ItemCard() {
               <button
                 className="itemcard-inner-btn"
                 onClick={() => addToCartHandler(item)}
-                style={{ background: item.available > 10 ? "" : "orange" }}
+                style={{ background: item.available >= 10 ? "" : "orange" }}
               >
                 {item.available > 10
                   ? item.available

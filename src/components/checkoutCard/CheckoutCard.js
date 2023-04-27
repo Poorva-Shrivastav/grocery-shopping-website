@@ -56,7 +56,9 @@ function CheckoutCard() {
                 </p>
               </div>
               <div className="checkoutcard-price-div">
-                <label className="checkoutcard-price">£{item.finalPrice}</label>
+                <label className="checkoutcard-price">
+                  £{Number(item.finalPrice).toFixed(2)}
+                </label>
               </div>
               <button
                 className="checkoutcard-btn checkoutcard-delete-btn"

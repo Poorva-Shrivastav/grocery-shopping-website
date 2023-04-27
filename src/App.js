@@ -111,7 +111,6 @@ function App() {
         newCart[index].quantity += 1;
         newCart[index].finalPrice = newPrice * newCart[index].quantity;
         setCart(newCart);
-        debugger;
         handleOffers(item);
         setFlag(true);
       }
