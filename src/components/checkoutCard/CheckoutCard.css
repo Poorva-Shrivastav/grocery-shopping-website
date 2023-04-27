@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  width: 60vw;
 }
 .checkoutcard-outer-div {
   height: 15vh;
@@ -28,7 +29,7 @@
   align-items: center;
 }
 .checkoutcard-itemnumber-div {
-  width: 8vw;
+  width: 6rem;
   display: flex;
   justify-content: space-evenly;
 }
@@ -59,4 +60,43 @@
   font-size: 14px;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .checkoutcard-itemnumber-div {
+    width: 6rem;
+  }
+  .checkoutcard-btn {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .checkoutcard-btn-disabled {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .checkoutcard-available-p {
+    width: 5rem;
+    height: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkoutcard-outermost-div {
+    width: 80vw;
+  }
+  .checkoutcard-itemnumber-div {
+    width: 6rem;
+  }
+  .checkoutcard-btn {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .checkoutcard-btn-disabled {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  .checkoutcard-available-p {
+    width: 5rem;
+    height: 1.2rem;
+  }
 }

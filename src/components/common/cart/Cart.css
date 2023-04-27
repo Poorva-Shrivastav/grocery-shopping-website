@@ -24,3 +24,18 @@
   right: -50px;
   font-size: 14px;
 }
+
+@media (max-width: 768px) {
+  .badge {
+    padding: 3px;
+    top: -55px;
+    right: -30px;
+  }
+}
+@media (max-width: 480px) {
+  .badge {
+    padding: 1.5px;
+    top: -50px;
+    right: -20px;
+  }
+}

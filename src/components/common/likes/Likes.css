@@ -24,3 +24,19 @@
   right: -43px;
   font-size: 14px;
 }
+
+@media (max-width: 768px) {
+  .likes-badge {
+    padding: 3px;
+    top: -48px;
+    right: -20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .likes-badge {
+    padding: 1.5px;
+    top: -42px;
+    right: -17px;
+  }
+}

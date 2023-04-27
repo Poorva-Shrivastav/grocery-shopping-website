@@ -44,8 +44,8 @@ function CheckoutCard() {
                 <p
                   className="checkoutcard-available-p"
                   style={{
-                    background: item.available > 10 ? "" : "orange",
-                    display: item.available > 10 ? "none" : "flex",
+                    background: item.available >= 10 ? "" : "orange",
+                    display: item.available >= 10 ? "none" : "flex",
                   }}
                 >
                   {item.available > 10

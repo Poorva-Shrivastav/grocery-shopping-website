@@ -8,7 +8,7 @@ import SearchBar from "../../SearchBar/SearchBar";
 function Header() {
   return (
     <div className="header-outermost-div">
-      <h3>GROCERIES</h3>
+      <h3 className="header-h3">GROCERIES</h3>
       <SearchBar />
       <Likes />
       <img src={avatar} alt="avatar" className="header-img" />

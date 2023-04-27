@@ -41,7 +41,7 @@
 }
 
 .itemcard-inner-p {
-  width: 10vw;
+  width: 8rem;
   height: 2rem;
   font-size: 10px;
   overflow: scroll;
@@ -54,4 +54,40 @@
   width: 90%;
   bottom: 0;
   position: absolute;
+}
+
+@media (max-width: 768px) {
+  .itemcard-outermost-div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .itemcard-outer-div {
+    height: 10rem;
+    width: 90%;
+  }
+  .itemcard-inner-btn {
+    width: 4rem;
+  }
+  .itemcard-inner-p {
+    width: 9rem;
+    height: 2rem;
+    font-size: 10px;
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .itemcard-outermost-div {
+    width: 100%;
+  }
+  .itemcard-outer-div {
+    height: 11rem;
+    width: 80%;
+  }
+  .itemcard-inner-p {
+    width: 8rem;
+  }
 }
