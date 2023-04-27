@@ -1,0 +1,49 @@
+.checkout-total-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
+}
+.checkout-goBack {
+  height: 5vh;
+  width: 3vw;
+  background-color: #7fd287;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.checkout-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7fd287;
+  border: 1px solid #7fd287;
+  height: 40vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  color: gray;
+}
+.grid-item {
+  border-bottom: 1px solid lightgray;
+  padding: 20px;
+  text-align: center;
+  font: 12px;
+  font-weight: 700;
+  height: 2rem;
+}
+.checkout-btn {
+  background-color: #7fd287;
+  border: none;
+  outline: none;
+  height: 2rem;
+  width: 6rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}

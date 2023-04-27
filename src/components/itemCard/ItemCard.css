@@ -1,0 +1,51 @@
+.itemcard-outermost-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.itemcard-outer-div {
+  height: 25vh;
+  width: 35vw;
+  display: flex;
+  justify-content: space-evenly;
+  color: gray;
+  border: 1px solid rgba(190, 190, 190, 0.5);
+  box-shadow: 5px 5px 20px rgba(181, 181, 181, 0.2);
+  border-radius: 16px;
+  margin-bottom: 3vh;
+}
+.itemcard-img {
+  overflow: hidden;
+  width: 16vw;
+}
+.itemcard-inner-div {
+  flex-wrap: wrap;
+  padding-left: 10px;
+  position: relative;
+}
+.itemcard-inner-btn {
+  width: 7vw;
+  height: 1.3rem;
+  font-size: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: lightgreen;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.itemcard-inner-p {
+  width: 10vw;
+  height: 2rem;
+  font-size: 10px;
+  overflow: scroll;
+}
+
+.itemcard-price-div {
+  display: flex;
+  justify-content: space-evenly;
+  height: 20px;
+  width: 10vw;
+  bottom: 0;
+  position: absolute;
+}

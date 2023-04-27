@@ -1,0 +1,26 @@
+.cart-likes {
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 1.3rem;
+}
+.likes-heart-icon {
+  color: #e86f6f;
+  height: 4vh;
+  width: 4vw;
+}
+
+.likes-badge {
+  height: 0.75rem;
+  width: 0.75rem;
+  padding: 3px;
+  border: 1px solid rgba(255, 121, 121, 0.5);
+  background-color: #ff7979;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  position: relative;
+  top: -46px;
+  right: -43px;
+  font-size: 14px;
+}

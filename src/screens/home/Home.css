@@ -1,0 +1,28 @@
+.home-outermost-div {
+  margin: 0 10rem;
+}
+.home-outer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-outer-div-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.home-filter-div {
+  border: 1px solid rgba(190, 190, 190, 0.5);
+  box-shadow: 5px 5px 20px rgba(181, 181, 181, 0.2);
+  border-radius: 30px;
+  height: 35px;
+  width: 156px;
+  padding-top: 1rem;
+}
+
+.home-filter-div:hover {
+  cursor: pointer;
+  color: gray;
+}

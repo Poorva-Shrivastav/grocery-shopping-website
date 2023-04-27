@@ -1,0 +1,11 @@
+.header-outermost-div {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4rem;
+  height: 4rem;
+}
+
+.header-img {
+  height: 3rem;
+  margin-top: 0.75rem;
+}
