@@ -32,21 +32,23 @@ function ItemCard() {
                 onClick={() => addToCartHandler(item)}
                 style={{ background: item.available >= 10 ? "" : "orange" }}
               >
-                {item.available > 10
-                  ? item.available
+                {item.available >= 10
+                  ? "Available"
                   : `only ${item.available} left`}
               </button>
               <div className="itemcard-price-div">
                 <label className="itemcard-price">{item.price}</label>
-                <IoMdCart
-                  onClick={navigateHandler}
-                  style={{ cursor: "pointer" }}
-                />
-                <FaHeart
-                  onClick={() => wishListHandler(item)}
-                  color={[...wish].includes(item) ? "red" : ""}
-                  style={{ cursor: "pointer" }}
-                />
+                <div>
+                  <IoMdCart
+                    onClick={navigateHandler}
+                    style={{ cursor: "pointer" }}
+                  />
+                  <FaHeart
+                    onClick={() => wishListHandler(item)}
+                    color={[...wish].includes(item) ? "#e86f6f" : ""}
+                    style={{ cursor: "pointer", marginLeft: "10px" }}
+                  />
+                </div>
               </div>
             </div>
           </div>

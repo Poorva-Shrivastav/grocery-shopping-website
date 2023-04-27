@@ -1,27 +1,33 @@
 .itemcard-outermost-div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 60vw;
 }
 .itemcard-outer-div {
   height: 25vh;
-  width: 35vw;
+  width: 27vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: gray;
   border: 1px solid rgba(190, 190, 190, 0.5);
   box-shadow: 5px 5px 20px rgba(181, 181, 181, 0.2);
   border-radius: 16px;
   margin-bottom: 3vh;
+  padding: 0 10px 0 0;
 }
 .itemcard-img {
   overflow: hidden;
-  width: 16vw;
+  width: 50%;
+  border-radius: 16px 0 0 16px;
+  background-color: lightgray;
 }
 .itemcard-inner-div {
+  width: 40%;
   flex-wrap: wrap;
   padding-left: 10px;
   position: relative;
+  background-color: white;
 }
 .itemcard-inner-btn {
   width: 7vw;
@@ -43,9 +49,9 @@
 
 .itemcard-price-div {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 20px;
-  width: 10vw;
+  width: 90%;
   bottom: 0;
   position: absolute;
 }

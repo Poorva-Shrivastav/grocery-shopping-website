@@ -3,8 +3,6 @@ import "./CheckoutCard.css";
 import { CartContext, ItemContext } from "../../context/Context";
 
 function CheckoutCard() {
-  // const { itemList } = useContext(ItemContext);
-
   const {
     cart,
     removeItemHandler,
