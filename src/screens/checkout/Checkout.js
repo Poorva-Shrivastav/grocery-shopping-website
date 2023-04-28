@@ -9,6 +9,11 @@ function Checkout({ cart, subtotal }) {
 
   const navigateHandler = () => navigate("/");
 
+  const finalSubmitHandler = () => {
+    alert("Thank you for shopping with us!");
+    navigate("/");
+  };
+
   return (
     <div className="checkout-outermost-div">
       <IoIosArrowBack className="checkout-goBack" onClick={navigateHandler} />
@@ -32,7 +37,9 @@ function Checkout({ cart, subtotal }) {
             </div>
             <div className="grid-item">£{Number(subtotal).toFixed(2)}</div>
             <div className="grid-item">
-              <button className="checkout-btn">Checkout</button>
+              <button className="checkout-btn" onClick={finalSubmitHandler}>
+                Checkout
+              </button>
             </div>
           </div>
         </>

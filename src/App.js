@@ -41,7 +41,18 @@ function App() {
 
   const onChangeHandler = (e) => {
     setInputVal(e.target.value);
+    if (e.target.value !== "") {
+      const newList = itemList.filter((x) =>
+        x.name.toLowerCase().includes(inputVal)
+      );
+      setItemList(newList);
+    } else if (e.target.value === "") {
+      setItemList(respData);
+      setInputVal("");
+    }
   };
+
+  console.log(itemList);
 
   const subTotalHandler = () => {
     const price = cart.map((item) => item.finalPrice);
@@ -72,20 +83,6 @@ function App() {
       setWish([...wish, prod]);
     } else {
       setWish([...wish.filter((item) => item.id !== prod.id)]);
-    }
-  };
-
-  const searchHandler = (e) => {
-    if (e.key === "Enter") {
-      if (inputVal !== "") {
-        const newList = itemList.filter((x) =>
-          x.name.toLowerCase().includes(inputVal)
-        );
-        setItemList(newList);
-      } else {
-        setItemList(respData);
-        setInputVal("");
-      }
     }
   };
 
@@ -187,9 +184,7 @@ function App() {
           }}
         >
           <WishContext.Provider value={{ wish, addToWishHandler }}>
-            <SearchItemContext.Provider
-              value={{ inputVal, onChangeHandler, searchHandler }}
-            >
+            <SearchItemContext.Provider value={{ inputVal, onChangeHandler }}>
               <Header />
             </SearchItemContext.Provider>
             <Routes>
