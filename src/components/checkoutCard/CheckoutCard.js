@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./CheckoutCard.css";
-import { CartContext, ItemContext } from "../../context/Context";
+import { CartContext } from "../../context/Context";
 
 function CheckoutCard() {
   const {
@@ -23,7 +23,7 @@ function CheckoutCard() {
                 <div className="checkoutcard-itemnumber-div">
                   <button
                     className={
-                      item.quantity === 1
+                      item.quantity <= 1
                         ? "checkoutcard-btn-disabled"
                         : "checkoutcard-btn"
                     }

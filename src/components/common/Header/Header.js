@@ -6,6 +6,7 @@ import avatar from "../../../images/avatar.png";
 import SearchBar from "../../SearchBar/SearchBar";
 
 function Header() {
+  //common component across the project
   return (
     <div className="header-outermost-div">
       <h3 className="header-h3">GROCERIES</h3>

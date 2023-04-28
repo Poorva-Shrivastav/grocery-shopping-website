@@ -23,8 +23,9 @@
   align-items: center;
   color: #7fd287;
   border: 1px solid #7fd287;
-  height: 40rem;
+  height: 20rem;
   border-radius: 16px;
+  margin: 0 5rem;
 }
 
 .grid-container {
@@ -74,6 +75,7 @@
   }
   .checkout-empty {
     height: 20rem;
+    margin: 0 3rem;
   }
 }
 

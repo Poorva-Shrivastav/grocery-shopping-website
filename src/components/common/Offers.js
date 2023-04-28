@@ -1,27 +1,3 @@
-//created a separate component to store all constants
-export const MenuItems = [
-  {
-    id: 1,
-    name: "All Items",
-    type: "",
-  },
-  {
-    id: 2,
-    name: "Drinks",
-    type: "drinks",
-  },
-  {
-    id: 3,
-    name: "Fruits",
-    type: "fruit",
-  },
-  {
-    id: 4,
-    name: "Bakery",
-    type: "bakery",
-  },
-];
-
 export const CoffeeOffer = {
   available: 10,
   description:

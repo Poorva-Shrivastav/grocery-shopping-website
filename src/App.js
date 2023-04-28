@@ -22,6 +22,7 @@ function App() {
   const [subtotal, setSubtotal] = useState(0.0);
 
   useEffect(() => {
+    //fetches the data on first load
     fetch(
       "https://uxdlyqjm9i.execute-api.eu-west-1.amazonaws.com/s?category=all"
     )
@@ -34,12 +35,13 @@ function App() {
             quantity: 1,
             finalPrice: Number(item.price.replace(/£/g, "")),
           }));
-        setItemList(newData);
-        setRespData(newData);
+        setItemList(newData); //state to save API response
+        setRespData(newData); //state to save API response
       });
   }, []);
 
   const onChangeHandler = (e) => {
+    //used by searchbar
     setInputVal(e.target.value);
     if (e.target.value !== "") {
       const newList = itemList.filter((x) =>
@@ -52,9 +54,8 @@ function App() {
     }
   };
 
-  console.log(itemList);
-
   const subTotalHandler = () => {
+    //to calculate the final price on checkout page
     const price = cart.map((item) => item.finalPrice);
     const finalPrice = price.reduce((total, item) => total + item, 0);
     Number(finalPrice).toFixed(2);
@@ -62,6 +63,7 @@ function App() {
   };
 
   const addToCartHandler = (item) => {
+    //for adding item to the cart
     const index = cart.findIndex((product) => product.id === item.id);
     const newPrice = item.price.replace(/£/g, "");
     if (index > -1) {
@@ -79,6 +81,7 @@ function App() {
   };
 
   const addToWishHandler = (prod) => {
+    //for adding items to wishlist
     if (!wish.includes(prod)) {
       setWish([...wish, prod]);
     } else {
@@ -87,6 +90,7 @@ function App() {
   };
 
   const filterHandler = (menu) => {
+    //for filtering the data into various types - Drinks, Fruits and Bakery
     if (menu.type !== "") {
       const newList = respData.filter((item) => item.type === menu.type);
       setItemList(newList);
@@ -94,12 +98,14 @@ function App() {
   };
 
   const removeItemHandler = (idx) => {
+    //to remove item from the checkout cart
     const newList = cart.filter((item) => item.id !== idx);
     setCart(newList);
     setFlag(true);
   };
 
   const increaseCartItemHandler = (item) => {
+    //for incrementing item count in checkout
     if (item.quantity < item.available) {
       const index = cart.findIndex((product) => product.id === item.id);
       const newPrice = item.price.replace(/£/g, "");
@@ -115,6 +121,7 @@ function App() {
   };
 
   const decreaseCartItemHandler = (item) => {
+    //for decrementing item count in checkout
     const index = cart.findIndex((product) => product.id === item.id);
     const newPrice = item.price.replace(/£/g, "");
     if (index > -1) {
@@ -123,12 +130,14 @@ function App() {
         newCart[index].quantity -= 1;
         newCart[index].finalPrice = newPrice * newCart[index].quantity;
         setCart(newCart);
+        removeOffer(item);
         setFlag(true);
       }
     }
   };
 
   const handleOffers = (item) => {
+    //for handling current running offers
     if (item.name === "Coca-Cola" && item.quantity % 6 === 0) {
       if (item.quantity < item.available - 1) {
         const index = cart.findIndex((product) => product.id === item.id);
@@ -141,27 +150,55 @@ function App() {
       }
     }
     if (item.name === "Croissants" && item.quantity % 3 === 0) {
-      if (item.quantity < item.available) {
-        cart.map((product) => {
-          let findObj = Object.values(product).indexOf("Coffee") >= 0;
-          if (findObj) {
-            const index = cart.findIndex(
-              (product) => product.id === CoffeeOffer.id
-            );
-            if (index > -1) {
-              let newCart = cart;
-              newCart[index].quantity += 1;
-              setCart(newCart);
-              setFlag(true);
-            }
-          } else {
-            console.log("not found");
+      itemList.map((product) => {
+        let findObj = Object.values(product).indexOf("Coffee") >= 0;
+        if (findObj) {
+          const index = cart.findIndex(
+            (product) => product.id === CoffeeOffer.id
+          );
+          const indexInList = itemList.findIndex(
+            (product) => product.id === CoffeeOffer.id
+          );
+          if (index > -1 && product.quantity < product.available) {
+            let newCart = cart;
+            const newPrice = item.price.replace(/£/g, "");
+            newCart[index].quantity += 1;
+            newCart[index].finalPrice = newPrice * newCart[index].quantity;
+            setCart(newCart);
+            setFlag(true);
+          } else if (indexInList > -1 && product.quantity < product.available) {
+            let newCart = product;
+            setCart([...cart, newCart]);
+            setFlag(true);
           }
-        });
-      }
+        }
+      });
+      // }
     }
   };
 
+  const removeOffer = (item) => {
+    debugger;
+    if (item.name === "Croissants" && (item.quantity + 1) % 3 === 0) {
+      cart.map((product) => {
+        let findObj = Object.values(product).indexOf("Coffee") >= 0;
+        if (findObj) {
+          const index = cart.findIndex(
+            (product) => product.id === CoffeeOffer.id
+          );
+          if (index > -1) {
+            let newCart = cart;
+            const newPrice = item.price.replace(/£/g, "");
+            newCart[index].quantity -= 1;
+            newCart[index].finalPrice = newPrice * newCart[index].quantity;
+            setCart(newCart);
+            setFlag(true);
+          }
+        }
+      });
+      // }
+    }
+  };
   useEffect(() => {
     setFlag(false);
     subTotalHandler();

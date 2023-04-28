@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "./Cart.css";
 import { IoMdCart } from "react-icons/io";
-
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../../context/Context";
 
