@@ -161,13 +161,13 @@ function App() {
           );
           if (index > -1 && product.quantity < product.available) {
             let newCart = cart;
-            const newPrice = item.price.replace(/£/g, "");
             newCart[index].quantity += 1;
-            newCart[index].finalPrice = newPrice * newCart[index].quantity;
+            newCart[index].finalPrice = 0.0;
             setCart(newCart);
             setFlag(true);
           } else if (indexInList > -1 && product.quantity < product.available) {
             let newCart = product;
+            newCart.finalPrice = 0.0;
             setCart([...cart, newCart]);
             setFlag(true);
           }
@@ -186,9 +186,9 @@ function App() {
           );
           if (index > -1) {
             let newCart = cart;
-            const newPrice = item.price.replace(/£/g, "");
+            // const newPrice = item.price.replace(/£/g, "");
             newCart[index].quantity -= 1;
-            newCart[index].finalPrice = newPrice * newCart[index].quantity;
+            newCart[index].finalPrice = 0.0;
             setCart(newCart);
             setFlag(true);
           }
