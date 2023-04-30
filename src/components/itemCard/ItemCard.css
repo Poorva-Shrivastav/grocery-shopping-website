@@ -108,4 +108,7 @@
   .itemcard-inner-p {
     width: 6rem;
   }
+  .itemcard-inner-btn {
+    height: 1.4rem;
+  }
 }
