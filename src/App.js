@@ -173,12 +173,10 @@ function App() {
           }
         }
       });
-      // }
     }
   };
 
   const removeOffer = (item) => {
-    debugger;
     if (item.name === "Croissants" && (item.quantity + 1) % 3 === 0) {
       cart.map((product) => {
         let findObj = Object.values(product).indexOf("Coffee") >= 0;

@@ -8,7 +8,7 @@ import { ItemContext, CartContext, WishContext } from "../../context/Context";
 function ItemCard() {
   const { itemList } = useContext(ItemContext);
   const { wish, addToWishHandler } = useContext(WishContext);
-  const { addToCartHandler } = useContext(CartContext);
+  const { cart, addToCartHandler } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -38,11 +38,26 @@ function ItemCard() {
               </button>
               <div className="itemcard-price-div">
                 <label className="itemcard-price">{item.price}</label>
-                <div>
-                  <IoMdCart
-                    onClick={navigateHandler}
-                    style={{ cursor: "pointer" }}
-                  />
+                <div
+                  style={{ display: "flex", justifyContent: "space-around" }}
+                >
+                  <>
+                    <IoMdCart
+                      onClick={() => addToCartHandler(item)}
+                      style={{ cursor: "pointer" }}
+                    />
+                    <div
+                      className={
+                        cart !== undefined && cart.includes(item)
+                          ? "itemcard-badge"
+                          : "display-none"
+                      }
+                    >
+                      {cart !== undefined &&
+                        cart.includes(item) &&
+                        item.quantity}
+                    </div>
+                  </>
                   <FaHeart
                     onClick={() => wishListHandler(item)}
                     color={[...wish].includes(item) ? "#e86f6f" : ""}

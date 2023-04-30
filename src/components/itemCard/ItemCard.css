@@ -24,7 +24,7 @@
 }
 .itemcard-inner-div {
   width: 40%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding-left: 10px;
   position: relative;
   background-color: white;
@@ -55,6 +55,24 @@
   bottom: 0;
   position: absolute;
 }
+.itemcard-badge {
+  height: 0.75rem;
+  width: 0.75rem;
+  padding: 2.2px;
+  border: 1px solid rgba(0, 152, 237, 0.5);
+  background-color: rgba(0, 133, 255, 0.7);
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  border-radius: 30px;
+  position: relative;
+  top: -15px;
+  right: 2px;
+  font-size: 14px;
+}
+.display-none {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .itemcard-outermost-div {
@@ -79,7 +97,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .itemcard-outermost-div {
     width: 100%;
   }
@@ -88,6 +106,6 @@
     width: 80%;
   }
   .itemcard-inner-p {
-    width: 8rem;
+    width: 6rem;
   }
 }
