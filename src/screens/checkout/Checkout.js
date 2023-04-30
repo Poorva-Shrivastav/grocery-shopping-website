@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CheckoutCard from "../../components/checkoutCard/CheckoutCard";
 import "./Checkout.css";
 import { useNavigate } from "react-router-dom";
 import { IoIosAddCircleOutline, IoIosArrowBack } from "react-icons/io";
+import { CartContext } from "../../context/Context";
 
 function Checkout({ cart, subtotal }) {
+  const { finalSubmitHandler } = useContext(CartContext);
+
   const navigate = useNavigate();
 
   const navigateHandler = () => navigate("/");
 
-  const finalSubmitHandler = () => {
+  const submitHandler = () => {
+    finalSubmitHandler();
     alert("Thank you for shopping with us!");
     navigate("/");
   };
@@ -37,7 +41,7 @@ function Checkout({ cart, subtotal }) {
             </div>
             <div className="grid-item">£{Number(subtotal).toFixed(2)}</div>
             <div className="grid-item">
-              <button className="checkout-btn" onClick={finalSubmitHandler}>
+              <button className="checkout-btn" onClick={submitHandler}>
                 Checkout
               </button>
             </div>

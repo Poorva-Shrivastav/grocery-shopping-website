@@ -197,6 +197,11 @@ function App() {
       // }
     }
   };
+
+  const finalSubmitHandler = () => {
+    setCart([]);
+  };
+
   useEffect(() => {
     setFlag(false);
     subTotalHandler();
@@ -216,6 +221,7 @@ function App() {
             removeItemHandler,
             increaseCartItemHandler,
             decreaseCartItemHandler,
+            finalSubmitHandler,
           }}
         >
           <WishContext.Provider value={{ wish, addToWishHandler }}>
